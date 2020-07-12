@@ -1,0 +1,86 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://sprites/maps/Level5.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Wolf.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/manage_boids.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ObstacleStageDown.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/DogArrows.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ObstacleStageLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ObstacleStageUp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/DogIJKL.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/DogWASD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/DogTFGH.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sound/music/5. Woodwind Quintet - II. Space Race.ogg" type="AudioStream" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 80.481, 250.311 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 145.584, 105.514 )
+
+[node name="Level5Easy" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = -10
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Wolf" parent="." instance=ExtResource( 2 )]
+position = Vector2( 602.86, 853.87 )
+
+[node name="Wolf2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1224.7, 168.045 )
+
+[node name="DogArrows" parent="." instance=ExtResource( 5 )]
+
+[node name="ObstacleStageUp" parent="." instance=ExtResource( 7 )]
+
+[node name="ObstacleStageDown" parent="." instance=ExtResource( 4 )]
+
+[node name="ObstacleStageLeft" parent="." instance=ExtResource( 6 )]
+
+[node name="ObstacleStageRiver1" type="StaticBody2D" parent="."]
+position = Vector2( 939.796, 193.166 )
+rotation = -0.00935716
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageRiver1"]
+shape = SubResource( 1 )
+
+[node name="ObstacleStageRiver2" type="StaticBody2D" parent="."]
+position = Vector2( 920.714, 839.704 )
+rotation = 0.063105
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageRiver2"]
+shape = SubResource( 1 )
+
+[node name="ObstacleStageBarn1" type="StaticBody2D" parent="."]
+position = Vector2( 1795.11, 92.1442 )
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageBarn1"]
+shape = SubResource( 2 )
+
+[node name="ObstacleStageBarn2" type="StaticBody2D" parent="."]
+position = Vector2( 1926.44, 1123.69 )
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageBarn2"]
+shape = SubResource( 2 )
+
+[node name="DogWASD" parent="." instance=ExtResource( 9 )]
+
+[node name="DogTFGH" parent="." instance=ExtResource( 10 )]
+
+[node name="DogIJKL" parent="." instance=ExtResource( 8 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+bus = "Music"

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bah2.wav-8ff7485d015ca2fc838774718f8e6cfc.sample"
+
+[deps]
+
+source_file="res://sound/effects/Bah2.wav"
+dest_files=[ "res://.import/Bah2.wav-8ff7485d015ca2fc838774718f8e6cfc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

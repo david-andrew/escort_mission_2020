@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Dogwalk3.wav-e2101259a4e1a2f30ac6f2eef9ec8200.sample"
+
+[deps]
+
+source_file="res://sound/effects/Dogwalk3.wav"
+dest_files=[ "res://.import/Dogwalk3.wav-e2101259a4e1a2f30ac6f2eef9ec8200.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

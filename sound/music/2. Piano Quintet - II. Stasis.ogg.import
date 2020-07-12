@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/2. Piano Quintet - II. Stasis.ogg-f3df212ab957ed155b2de7ffb46db6cc.oggstr"
+
+[deps]
+
+source_file="res://sound/music/2. Piano Quintet - II. Stasis.ogg"
+dest_files=[ "res://.import/2. Piano Quintet - II. Stasis.ogg-f3df212ab957ed155b2de7ffb46db6cc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://sprites/maps/Level4.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Wolf.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/manage_boids.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ObstacleStageDown.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/DogArrows.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ObstacleStageLeft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ObstacleStageUp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/DogIJKL.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/DogWASD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/DogTFGH.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sound/music/4. Woodwind Quintet - IV. A New Manifesto.ogg" type="AudioStream" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 185.879, 84.194 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 119.64, 60.8365 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 84.5106, 81.9912 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25.8824, 42.0392 )
+
+[node name="Level4Easy" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = -10
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Wolf" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1275.75, 897.236 )
+
+[node name="DogArrows" parent="." instance=ExtResource( 5 )]
+
+[node name="ObstacleStageUp" parent="." instance=ExtResource( 7 )]
+
+[node name="ObstacleStageDown" parent="." instance=ExtResource( 4 )]
+
+[node name="ObstacleStageLeft" parent="." instance=ExtResource( 6 )]
+
+[node name="ObstacleStageForest1" type="StaticBody2D" parent="."]
+position = Vector2( 1574.98, 953.254 )
+rotation = -1.16691
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageForest1"]
+shape = SubResource( 1 )
+
+[node name="ObstacleStageForest2" type="StaticBody2D" parent="."]
+position = Vector2( 578.383, 653.393 )
+rotation = -0.80655
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageForest2"]
+shape = SubResource( 2 )
+
+[node name="ObstacleStageForest3" type="StaticBody2D" parent="."]
+position = Vector2( 1194.61, 259.409 )
+rotation = -1.60143
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageForest3"]
+shape = SubResource( 3 )
+
+[node name="ObstacleStageForest4" type="StaticBody2D" parent="."]
+position = Vector2( 1186.76, 155.02 )
+rotation = -1.60143
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageForest4"]
+shape = SubResource( 4 )
+
+[node name="ObstacleStageForest5" type="StaticBody2D" parent="."]
+position = Vector2( 1175.53, 354.818 )
+rotation = -1.60143
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleStageForest5"]
+shape = SubResource( 4 )
+
+[node name="DogWASD" parent="." instance=ExtResource( 9 )]
+
+[node name="DogTFGH" parent="." instance=ExtResource( 10 )]
+
+[node name="DogIJKL" parent="." instance=ExtResource( 8 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+bus = "Music"

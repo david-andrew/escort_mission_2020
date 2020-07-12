@@ -1,0 +1,43 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/maps/Level3.png" type="Texture" id=1]
+[ext_resource path="res://scenes/ObstacleStageDown.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/DogArrows.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ObstacleStageLeft.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ObstacleStageUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Wolf.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/manage_boids.gd" type="Script" id=7]
+[ext_resource path="res://scenes/DogIJKL.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/DogWASD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/DogTFGH.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sound/music/3. Piano Quintet - IV. I and Thou.ogg" type="AudioStream" id=11]
+
+[node name="Level3Easy" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = -10
+texture = ExtResource( 1 )
+offset = Vector2( 960, 540 )
+
+[node name="DogArrows" parent="." instance=ExtResource( 3 )]
+
+[node name="ObstacleStageUp" parent="." instance=ExtResource( 5 )]
+
+[node name="ObstacleStageDown" parent="." instance=ExtResource( 2 )]
+
+[node name="ObstacleStageLeft" parent="." instance=ExtResource( 4 )]
+
+[node name="Wolf" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1518.67, 253.359 )
+
+[node name="DogWASD" parent="." instance=ExtResource( 9 )]
+
+[node name="DogTFGH" parent="." instance=ExtResource( 10 )]
+
+[node name="DogIJKL" parent="." instance=ExtResource( 8 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+bus = "Music"
